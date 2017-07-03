@@ -1,0 +1,21 @@
+{
+    "id": "101",
+    "type": "win-draw-win",
+    "options": [
+        {
+            "id": "10101",
+            "name": "Southampton",
+            "odds": "3/5"
+        },
+        {
+            "id": "10102",
+            "name": "Draw",
+            "odds": "4/5"
+        },
+        {
+            "id": "10103",
+            "name": "Bournemouth",
+            "odds": "5/1"
+        }
+    ]
+}

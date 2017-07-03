@@ -1,0 +1,16 @@
+{
+    "id": "102",
+    "type": "first-goalscorer",
+    "options": [
+        {
+            "id": "10201",
+            "name": "Shane Long",
+            "odds": "10/7"
+        },
+        {
+            "id": "10202",
+            "name": "Charlie Austin",
+            "odds": "4/5"
+        }
+    ]
+}
