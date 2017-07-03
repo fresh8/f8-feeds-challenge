@@ -11,7 +11,7 @@ import (
 // EventRootHandler returns a hardcoded list of ID's that should exist
 // NOTE: They don't (intentionally)
 func EventRootHandler(w http.ResponseWriter, r *http.Request) {
-	eventIds := "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+	eventIds := "[1, 2, 3, 4, 5]"
 	w.Write([]byte(eventIds))
 }
 
@@ -21,7 +21,7 @@ func EventRootHandler(w http.ResponseWriter, r *http.Request) {
 func EventHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
-	data, err := ioutil.ReadFile(fmt.Sprintf("feed/feeds/events/%s.json", id))
+	data, err := ioutil.ReadFile(fmt.Sprintf("feed/files/events/%s.json", id))
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
@@ -36,7 +36,7 @@ func EventHandler(w http.ResponseWriter, r *http.Request) {
 func MarketHandler(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
-	data, err := ioutil.ReadFile(fmt.Sprintf("feed/feeds/markets/%s.json", id))
+	data, err := ioutil.ReadFile(fmt.Sprintf("feed/files/markets/%s.json", id))
 	if err != nil {
 		w.WriteHeader(http.StatusNotFound)
 		return
