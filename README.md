@@ -19,17 +19,33 @@ the following environment variable: `STORE_ADDR`.
 
 For example you might start the program with:
 ```
-STORE_ADDR=localhost:8001/event/add ./bin/event_importer
+STORE_ADDR=localhost:8001 ./bin/event_importer
 ```
 
-if your compile binary is called `event_importer` and is in the `/bin` folder.
+if your compiled binary is called `event_importer` and is in the `/bin` folder.
+
+The URL to post the events to is `$STORE_ADDR + /event`
 
 Before POSTing the data to the store, validate that it is correct. The same
 validation will be run at the store and incorrect data will rejected.
 
+## Additional Information
+
 Some data will be formatted inconsistently so ensure your program can handle this.
 
 Not all ID's will exist.
+
+## Store
+
+Is not provided and therefore you may want to mock this to test your program. It
+has a single endpoint
+
+### /event
+
+POST
+
+Accepts a single event as described in the section below. Returns 200 OK for
+correctly formatted for 400 BAD REQUEST for poorly validated events.
 
 ## Feed Server
 
