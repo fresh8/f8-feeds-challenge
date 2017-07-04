@@ -29,6 +29,8 @@ The URL to post the events to is `$STORE_ADDR + /event`
 Before POSTing the data to the store, validate that it is correct. The same
 validation will be run at the store and incorrect data will rejected.
 
+To complete the challenge, create a new pull request.
+
 ## Additional Information
 
 Some data will be formatted inconsistently so ensure your program can handle this.
