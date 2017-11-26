@@ -4,7 +4,7 @@
 
 * Write in Golang
 * Use any libraries but please justify their use
-* Use any dependancy management tool (if required)
+* Use any dependency management tool (if required)
 * Only spend a maximum of 2 hours on this task
 
 ## The challenge
@@ -29,13 +29,12 @@ The URL to post the events to is `$STORE_ADDR + /event`
 Before POSTing the data to the store, validate that it is correct. The same
 validation will be run at the store and incorrect data will rejected.
 
-To complete the challenge, create a new pull request.
+To complete the challenge, provide us with your codebase. This can either be in a new repository, provided to us as a compressed file, or any other method you feel is acceptable.
 
 ## Additional Information
 
-Some data will be formatted inconsistently so ensure your program can handle this.
-
-Not all ID's will exist.
+* Some data will be formatted inconsistently so ensure your program can handle this.
+ * Not all ID's will exist.
 
 ## Store
 
