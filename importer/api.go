@@ -77,7 +77,12 @@ func (a API) GetEventByID(id int) (*Event, error) {
 
 // GetMarketByID returns a market for a given ID
 func (a API) GetMarketByID(id int) (*Market, error) {
-	return nil, nil
+	url := fmt.Sprintf("%s/%d", a.feed.markets, id)
+	body, err := a.GetRequest(url)
+	if err != nil {
+		return nil, err
+	}
+	return a.parser.Market(body)
 }
 
 // PostToStore is posting data to the store
