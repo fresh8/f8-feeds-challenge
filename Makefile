@@ -3,3 +3,9 @@ build-feed:
 
 run-feed:
 	make build-feed && ./bin/feed
+
+build-importer:
+	go build -o bin/importer github.com/Roverr/f8-feeds-challenge/importer
+
+run-importer:
+	make build-importer && ./bin/importer

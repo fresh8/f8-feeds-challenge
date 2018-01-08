@@ -72,6 +72,9 @@ func (a API) GetEventByID(id int) (*Event, error) {
 	if err != nil {
 		return nil, err
 	}
+	if len(body) == 0 {
+		return nil, nil
+	}
 	return a.parser.Event(body)
 }
 
@@ -81,6 +84,9 @@ func (a API) GetMarketByID(id int) (*Market, error) {
 	body, err := a.GetRequest(url)
 	if err != nil {
 		return nil, err
+	}
+	if len(body) == 0 {
+		return nil, nil
 	}
 	return a.parser.Market(body)
 }

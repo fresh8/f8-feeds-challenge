@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"strconv"
+	"time"
+)
 
 type base struct {
 	ID   string `json:"id"`
@@ -12,6 +15,19 @@ type Event struct {
 	base
 	Time    time.Time `json:"-"`
 	Markets []int     `json:"markets"`
+}
+
+// SearchEvent is for finding an event in a collection of events
+func SearchEvent(events []Event, id string) *Event {
+	if events == nil {
+		return nil
+	}
+	for _, event := range events {
+		if event.ID == id {
+			return &event
+		}
+	}
+	return nil
 }
 
 // PopulatedEvent are events, which are already populated and ready to be
@@ -27,6 +43,12 @@ type Market struct {
 	ID      string   `json:"ID"`
 	Type    string   `json:"type"`
 	Options []Option `json:"options"`
+}
+
+// GetIntegerID is for getting a market's ID as an integer
+func (m Market) GetIntegerID() (int, error) {
+	i, err := strconv.ParseInt(m.ID, 10, 64)
+	return int(i), err
 }
 
 // rawOption describes an option where its odds represented in a string
