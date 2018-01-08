@@ -9,3 +9,6 @@ build-importer:
 
 run-importer:
 	make build-importer && ./bin/importer
+
+test-importer:
+	go test ./importer

@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -93,5 +95,16 @@ func (a API) GetMarketByID(id int) (*Market, error) {
 
 // PostToStore is posting data to the store
 func (a API) PostToStore(event PopulatedEvent) error {
+	payload, err := json.Marshal(event)
+	if err != nil {
+		return err
+	}
+	resp, err := http.Post(a.store.event, "application/json; charset=utf-8", bytes.NewBuffer(payload))
+	if err != nil {
+		return err
+	}
+	if resp.StatusCode == 400 {
+		return fmt.Errorf("Validation error with event %s", event.ID)
+	}
 	return nil
 }

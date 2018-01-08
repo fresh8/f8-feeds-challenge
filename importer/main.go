@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Roverr/f8-feeds-challenge/importer/config"
+	"github.com/fresh8/f8-feeds-challenge/importer/config"
 )
 
 // Very minimal error logging

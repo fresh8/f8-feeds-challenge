@@ -40,7 +40,7 @@ type PopulatedEvent struct {
 
 // Market describes a football market
 type Market struct {
-	ID      string   `json:"ID"`
+	ID      string   `json:"id"`
 	Type    string   `json:"type"`
 	Options []Option `json:"options"`
 }
