@@ -3,17 +3,17 @@
     "type": "win-draw-win",
     "options": [
         {
-            "id": "10101",
+            "id": "40101",
             "name": "Poznan",
             "odds": "3/5"
         },
         {
-            "id": "10102",
+            "id": "40102",
             "name": "Draw",
             "odds": "4/5"
         },
         {
-            "id": "10103",
+            "id": "40103",
             "name": "Radavist FC",
             "odds": "5/1"
         }
