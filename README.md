@@ -5,7 +5,7 @@
 * Write in Golang
 * Use any libraries but please justify their use
 * Use any dependency management tool (if required)
-* Only spend a maximum of 2 hours on this task
+* Spend as long as you'd like but as a guideline 4 hours usually is enough time
 
 ## The challenge
 
