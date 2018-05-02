@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-// ServeNotFound writes not found error.
+// ServeRecordNotFound writes not found error.
 func ServeRecordNotFound(w http.ResponseWriter, err error) {
 	log.Print(err)
 	http.Error(w, "Record not found", http.StatusNotFound)
