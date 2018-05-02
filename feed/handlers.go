@@ -23,11 +23,11 @@ func EventHandler(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 	data, err := ioutil.ReadFile(fmt.Sprintf("feed/files/events/%s.json", id))
 	if err != nil {
-		w.WriteHeader(http.StatusNotFound)
+		ServeRecordNotFound(w, err)
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
+	ServeStatusOkay(w, err)
 	w.Write(data)
 }
 
@@ -38,10 +38,10 @@ func MarketHandler(w http.ResponseWriter, r *http.Request) {
 	id := vars["id"]
 	data, err := ioutil.ReadFile(fmt.Sprintf("feed/files/markets/%s.json", id))
 	if err != nil {
-		w.WriteHeader(http.StatusNotFound)
+		ServeRecordNotFound(w, err)
 		return
 	}
 
-	w.WriteHeader(http.StatusOK)
+	ServeStatusOkay(w, err)
 	w.Write(data)
 }
