@@ -9,9 +9,24 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/football/events", EventRootHandler)
-	r.HandleFunc("/football/events/{id:[0-9]+}", EventHandler)
-	r.HandleFunc("/football/markets/{id:[0-9]+}", MarketHandler)
+
+	r.NewRoute().
+		Name("EventRootHandler").
+		Methods("GET").
+		Path("/football/events").
+		HandlerFunc(EventRootHandler)
+
+	r.NewRoute().
+		Name("EventHandler").
+		Methods("GET").
+		Path("/football/events/{id:[0-9]+}").
+		HandlerFunc(EventHandler)
+
+	r.NewRoute().
+		Name("MarketHandler").
+		Methods("GET").
+		Path("/football/markets/{id:[0-9]+}").
+		HandlerFunc(MarketHandler)
 
 	log.Println("server running on :8000")
 	if err := http.ListenAndServe(":8000", r); err != nil {
